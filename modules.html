@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST Web Service</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="left-col">
+      <h3>Send Request</h3>
+      <div>
+        <div style="display: flex">
+          <select id="requestType">
+            <option id="get" value="GET">GET</option>
+            <option id="post" value="POST">POST</option>
+            <option id="put" value="PUT">PUT</option>
+            <option id="delete" value="DELETE">DELETE</option>
+          </select>
+          <input style="flex-grow: 1; padding: 10px" type="text" id="url" />
+          <button id="submit">SEND</button>
+        </div>
+
+        <div style="margin: 5px"><i>Data</i></div>
+        <div id="requestJsonBox" style="display: flex;">
+          <textarea style="width: 100%;padding: 15px;" id="requestJsonText" rows="15"></textarea>
+        </div>
+      </div>
+      <h3 style="display: inline-block;">Resources</h3>&emsp;<small>click to fill sample request</small>
+      <div class="resources">
+        <div class="opblock opblock-get" onclick="setRequestTemplate(0)">
+          <div class="opblock-summary opblock-summary-get">
+            <button aria-label="get /module/list" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">GET</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/module/list</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">List Existing Modules</div>
+              ➜
+            </button>
+          </div>
+        </div>
+        <div class="opblock opblock-post" onclick="setRequestTemplate(1)">
+          <div class="opblock-summary opblock-summary-post">
+            <button aria-label="post /module/create" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">POST</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/module/create</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">Create Module</div>
+              ➜
+            </button>
+          </div>
+        </div>
+        <div class="opblock opblock-get" onclick="setRequestTemplate(2)">
+          <div class="opblock-summary opblock-summary-get">
+            <button aria-label="get /module/{id}/assessment/list" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">GET</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/module/{m_id}/assessment/list</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">List Assessments of Module</div>
+              ➜
+            </button>
+          </div>
+        </div>
+        <div class="opblock opblock-post" onclick="setRequestTemplate(3)">
+          <div class="opblock-summary opblock-summary-post">
+            <button aria-label="post /module/{id}/assessment/create" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">POST</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/module/{m_id}/assessment/create</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">Create Assessment for Module</div>
+              ➜
+            </button>
+          </div>
+        </div>
+        <div class="opblock opblock-put" onclick="setRequestTemplate(4)">
+          <div class="opblock-summary opblock-summary-put">
+            <button aria-label="put /module/{id}/assessment/{id1}/update" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">PUT</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/module/{m_id}/assessment/{a_id}/update</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">Update Assessment Information</div>
+              ➜
+            </button>
+          </div>
+        </div>
+        <div class="opblock opblock-delete" onclick="setRequestTemplate(5)">
+          <div class="opblock-summary opblock-summary-delete">
+            <button aria-label="delete /module/{id}/assessment/{id1}/delete" aria-expanded="false" class="opblock-summary-control">
+              <span class="opblock-summary-method">DELETE</span>
+              <span class="opblock-summary-path">
+                <a class="nostyle" href="#">
+                  <span>/assessment/{a_id}/delete</span>
+                </a>
+              </span>
+              <div class="opblock-summary-description">Delete Assessment for module</div>
+              ➜
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-col">
+      <h3 style="text-align: center">Response</h3>
+      <pre id="JSONresponse" style="white-space: pre-wrap;"></pre>
+    </div>
+    <script src="modules.js"></script>
+  </body>
+</html>

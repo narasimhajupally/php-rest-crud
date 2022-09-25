@@ -1,0 +1,140 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: beige;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  font-family: 'Lato';
+}
+
+a.nostyle,
+a.nostyle:visited {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: inherit;
+}
+
+select {
+  width: 100px;
+  padding: 10px;
+}
+
+.left-col {
+  margin: 1rem;
+}
+
+.right-col {
+  margin: 1rem;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.opblock {
+  border: 1px solid #000;
+  border-top-color: rgb(0, 0, 0);
+  border-right-color: rgb(0, 0, 0);
+  border-bottom-color: rgb(0, 0, 0);
+  border-left-color: rgb(0, 0, 0);
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.19);
+}
+
+.opblock-get {
+  background: rgba(97, 175, 254, 0.1);
+  border-color: #61affe;
+}
+
+.opblock-post {
+  background: rgba(73, 204, 144, 0.1);
+  border-color: #49cc90;
+}
+
+.opblock-put {
+  background: rgba(252, 161, 48, 0.1);
+  border-color: #fca130;
+}
+
+.opblock-delete {
+  background: rgba(249, 62, 62, 0.1);
+  border-color: #f93e3e;
+}
+
+.opblock-summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+}
+
+.opblock-summary-control {
+  all: inherit;
+  border-bottom: 0;
+  cursor: pointer;
+  flex: 1;
+  padding: 0;
+}
+
+.opblock-summary-method {
+  border-radius: 3px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 80px;
+  padding: 6px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.opblock.opblock-post .opblock-summary-method {
+  background: #49cc90;
+}
+.opblock.opblock-get .opblock-summary-method {
+  background: #61affe;
+}
+
+.opblock-put .opblock-summary-method {
+  background: #fca130;
+}
+
+.opblock.opblock-delete .opblock-summary-method {
+  background: #f93e3e;
+}
+
+.opblock-summary-path {
+  align-items: center;
+  color: #3b4151;
+  display: flex;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 10px;
+  word-break: break-word;
+}
+
+.opblock-summary-description {
+  color: #3b4151;
+  flex: 1 1 auto;
+  font-family: sans-serif;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+/* .col{
+    width: 50%;
+}
+
+.col.right{
+    margin: 5px;
+    background-color: white;
+} */
